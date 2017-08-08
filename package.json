@@ -1,0 +1,25 @@
+{
+  "name": "thai2karaoke",
+  "version": "0.0.1",
+  "description": "convert thai language to karaoke (Romanization)",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "git": "https://github.com/comdevx/thai2karaoke",
+  "author": "ComdevX",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comdevx/thai2karaoke.git"
+  },
+  "keywords": [
+    "thai",
+    "karaoke",
+    "convert"
+  ],
+  "bugs": {
+    "url": "https://github.com/comdevx/thai2karaoke/issues"
+  },
+  "homepage": "https://github.com/comdevx/thai2karaoke#readme"
+}
