@@ -20,7 +20,7 @@ net.train(list, {
     log: true
 })
 
-const w = 'คลับ'
+const w = 'จรร'
 let r = brain.likely(toBinary(w), net)
 console.log(r)
 let f, s, th
@@ -60,6 +60,10 @@ if (r === 'a8') {
     s = fw(w[1])
     th = fw(w[4])
     r = f.first + s.first + 'a' + th.first
+}
+if (r === 'an') {
+    f = fw(w[0])
+    r = f.first + 'an'
 }
 
 console.log(r)
