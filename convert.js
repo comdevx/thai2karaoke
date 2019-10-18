@@ -17,8 +17,9 @@ module.exports = (r, w) => {
     }
     if (r === 'a4') {
         f = fw(w[0])
+        s = fw(w[1])
         th = fw(w[3])
-        r = f.first + 'a' + th.first
+        r = f.first + s.first + 'a' + th.first
     }
     if (r === 'a5') {
         f = fw(w[0])
