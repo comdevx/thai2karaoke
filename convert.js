@@ -110,6 +110,18 @@ module.exports = (r, w) => {
         s = fw(w[3])
         r = f.first + 'e' + s.first
     }
+    if (r === 'e3') {
+        f = fw(w[1])
+        s = fw(w[2])
+        th = fw(w[3])
+        r = f.first + s.first + 'e' + th.first
+    }
+    if (r === 'e4') {
+        f = fw(w[1])
+        s = fw(w[2])
+        th = fw(w[4])
+        r = f.first + s.first + 'e' + th.first
+    }
     if (r === 'ae') {
         f = fw(w[1])
         r = f.first + 'ae'
@@ -117,6 +129,11 @@ module.exports = (r, w) => {
     if (r === 'ae1') {
         f = fw(w[1])
         s = fw(w[2])
+        r = f.first + 'ae' + s.first
+    }
+    if (r === 'ae2') {
+        f = fw(w[1])
+        s = fw(w[3])
         r = f.first + 'ae' + s.first
     }
     if (r === 'o') {

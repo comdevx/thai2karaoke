@@ -11,7 +11,7 @@ const convert = require('./convert')
 
 const config = {
     binaryThresh: 0.01,
-    hiddenLayers: [10, 10], // array of ints for the sizes of the hidden layers in the network
+    hiddenLayers: [10], // array of ints for the sizes of the hidden layers in the network
     activation: 'sigmoid' // supported activation types: ['sigmoid', 'relu', 'leaky-relu', 'tanh']
 }
 
@@ -21,7 +21,7 @@ net.train(list, {
     log: true
 })
 
-const w = 'สวัส'
+const w = 'เหม็น'
 // const r = brain.likely(toBinary(w), net)
 const r = net.run(toBinary(w))
 let a = []
