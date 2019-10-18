@@ -1,6 +1,9 @@
 const fw = require('./find_word')
 
 module.exports = (r, w) => {
+
+    console.log(r)
+
     let f, s, th
 
     if (r === 'a' || r === 'a1') {
@@ -120,6 +123,15 @@ module.exports = (r, w) => {
         r = f.first + 'o'
     }
     if (r === 'o1') {
+        f = fw(w[0])
+        r = f.first + 'o'
+    }
+    if (r === 'o2') {
+        f = fw(w[0])
+        s = fw(w[2])
+        r = f.first + 'o' + s.first
+    }
+    if (r === 'o3') {
         f = fw(w[1])
         s = fw(w[2])
         r = f.first + 'o' + s.first
@@ -159,12 +171,6 @@ module.exports = (r, w) => {
         th = fw(w[5])
         r = f.first + s.first + 'ia' + th.first
     }
-    if (r === 'ia3') {
-        f = fw(w[1])
-        s = fw(w[2])
-        th = fw(w[6])
-        r = f.first + s.first + 'ia' + th.first
-    }
     if (r === 'uea') {
         f = fw(w[1])
         r = f.first + 'uea'
@@ -184,6 +190,58 @@ module.exports = (r, w) => {
         s = fw(w[2])
         th = fw(w[5])
         r = f.first + s.first + 'uea' + th.first
+    }
+    if (r === 'uea4') {
+        f = fw(w[1])
+        s = fw(w[2])
+        th = fw(w[6])
+        r = f.first + s.first + 'uea' + th.first
+    }
+    if (r === 'ua') {
+        f = fw(w[0])
+        r = f.first + 'ua'
+    }
+    if (r === 'ua1') {
+        f = fw(w[0])
+        s = fw(w[2])
+        r = f.first + 'ua' + s.first
+    }
+    if (r === 'ua2') {
+        f = fw(w[0])
+        s = fw(w[3])
+        r = f.first + 'ua' + s.first
+    }
+    if (r === 'ai') {
+        f = fw(w[1])
+        r = f.first + 'ai'
+    }
+    if (r === 'ai1') {
+        f = fw(w[1])
+        s = fw(w[2])
+        r = f.first + 'ai' + s.first
+    }
+    if (r === 'ao') {
+        f = fw(w[1])
+        r = f.first + 'ao'
+    }
+    if (r === 'ao1') {
+        f = fw(w[0])
+        s = fw(w[2])
+        r = f.first + 'ao' + s.first
+    }
+    if (r === 'ao2') {
+        f = fw(w[0])
+        s = fw(w[3])
+        r = f.first + 'ao' + s.first
+    }
+    if (r === 'ui') {
+        f = fw(w[0])
+        r = f.first + 'ui'
+    }
+    if (r === 'ui1') {
+        f = fw(w[0])
+        s = fw(w[1])
+        r = f.first + s.first + 'ui'
     }
 
     return r

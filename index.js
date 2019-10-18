@@ -3,16 +3,17 @@
 // Email: comdevx@gmail.com
 // Started: 2017/08/04 21.00
 // Facebook: http://www.fb.com/comdevx
-// สามารถสนับสนุนได้นะครับ
-// BTC: 13owVDCcYykj853S5W37Ys7np97jvCtL7Z
-// ETH: 0xa751F70e862E3747e435430105bbE6db20C828C9
-// LTC: LNP95PsUgtzYghK5Ada7w3hHK2WwEYSSwn
-// XRP: rp7Fq2NQVRJxQJvUZ4o8ZzsTSocvgYoBbs
 
 const brain = require('brain.js')
 const list = require('./word_list')
 const toBinary = require('./to_binary')
 const convert = require('./convert')
+
+const config = {
+    binaryThresh: 0.5, // ¯\_(ツ)_/¯
+    hiddenLayers: [3], // array of ints for the sizes of the hidden layers in the network
+    activation: 'sigmoid' // supported activation types: ['sigmoid', 'relu', 'leaky-relu', 'tanh']
+}
 
 const net = new brain.NeuralNetwork()
 
@@ -20,7 +21,18 @@ net.train(list, {
     log: true
 })
 
-const w = 'เพรช'
-let r = brain.likely(toBinary(w), net)
-r = convert(r, w)
-console.log(r)
+const w = 'หา'
+// const r = brain.likely(toBinary(w), net)
+const r = net.run(toBinary(w))
+let a = []
+for (const val in r) {
+    a.push([val, r[val]])
+}
+
+a.sort(function (a, b) {
+    return a[1] - b[1]
+})
+console.log(a)
+const i = a.length - 1
+a = convert(a[i][0], w)
+console.log(a)
