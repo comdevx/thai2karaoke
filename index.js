@@ -10,18 +10,18 @@ const toBinary = require('./to_binary')
 const convert = require('./convert')
 
 const config = {
-    binaryThresh: 0.5, // ¯\_(ツ)_/¯
-    hiddenLayers: [3], // array of ints for the sizes of the hidden layers in the network
+    binaryThresh: 0.01, // ¯\_(ツ)_/¯
+    hiddenLayers: [10,10], // array of ints for the sizes of the hidden layers in the network
     activation: 'sigmoid' // supported activation types: ['sigmoid', 'relu', 'leaky-relu', 'tanh']
 }
 
-const net = new brain.NeuralNetwork()
+const net = new brain.NeuralNetwork(config)
 
 net.train(list, {
     log: true
 })
 
-const w = 'หา'
+const w = 'ว้าว'
 // const r = brain.likely(toBinary(w), net)
 const r = net.run(toBinary(w))
 let a = []

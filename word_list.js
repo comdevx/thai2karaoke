@@ -20,6 +20,8 @@ module.exports = [
     { input: toBinary('ผา'), output: { a: 1 } },
     { input: toBinary('ปา'), output: { a: 1 } },
     { input: toBinary('หา'), output: { a: 1 } },
+    { input: toBinary('ฟา'), output: { a: 1 } },
+    { input: toBinary('อา'), output: { a: 1 } },
     { input: toBinary('ฟาร์'), output: { a: 1 } },
     { input: toBinary('ก่ะ'), output: { a: 1 } },
     { input: toBinary('ค้า'), output: { a: 1 } },
