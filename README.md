@@ -1,6 +1,6 @@
 # thai2karaoke
 Project: thai2karaoke<br />
-Created: Comdevx<br />
+CreatedBy: Comdevx<br />
 Email: comdevx@gmail.com<br />
 Started: 2017/08/04 21.00<br />
 Facebook: http://www.fb.com/comdevx<br />

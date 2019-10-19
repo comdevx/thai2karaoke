@@ -35,17 +35,17 @@ module.exports = val => {
         { th: 'ม', first: 'm', spell: 'm' },
         { th: 'ย', first: 'y', spell: 'i' },
         { th: 'ร', first: 'r', spell: 'n' },
-        { th: 'ฤ', first: 'rue', spell: '' },
-        { th: 'ล', first: 'l', spell: 'n' },
-        { th: 'ฦ', first: 'lue', spell: '' },
-        { th: 'ว', first: 'w', spell: '' },
+        { th: 'ฤ', first: 'rue', spell: 'rue' },
+        { th: 'ล', first: 'l', spell: 'l' },
+        { th: 'ฦ', first: 'lue', spell: 'lue' },
+        { th: 'ว', first: 'w', spell: 'w' },
         { th: 'ศ', first: 's', spell: 't' },
         { th: 'ษ', first: 's', spell: 't' },
         { th: 'ส', first: 's', spell: 't' },
-        { th: 'ห', first: 'h', spell: '' },
+        { th: 'ห', first: 'h', spell: 'h' },
         { th: 'ฬ', first: 'l', spell: 'n' },
         { th: 'อ', first: 'a', spell: 'o' },
-        { th: 'ฮ', first: 'h', spell: '' }].find(t => t.th === val)
+        { th: 'ฮ', first: 'h', spell: 'h' }].find(t => t.th === val)
     if (result) {
         return result
     } else {

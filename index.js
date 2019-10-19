@@ -1,7 +1,7 @@
 // Project: thai2karaoke
-// Created: Comdevx
+// CreatedBy: Comdevx
 // Email: comdevx@gmail.com
-// Started: 2017/08/04 21.00
+// Created: 2017/08/04 21.00
 // Facebook: http://www.fb.com/comdevx
 
 const brain = require('brain.js')
@@ -10,19 +10,27 @@ const toBinary = require('./to_binary')
 const convert = require('./convert')
 
 const config = {
-    binaryThresh: 0.01,
-    hiddenLayers: [10, 10], // array of ints for the sizes of the hidden layers in the network
+    binaryThresh: 0.5,
+    hiddenLayers: [10], // array of ints for the sizes of the hidden layers in the network
     activation: 'sigmoid' // supported activation types: ['sigmoid', 'relu', 'leaky-relu', 'tanh']
 }
 
 const net = new brain.NeuralNetwork(config)
 
 net.train(list, {
-    log: true
+    // iterations: 20000,
+    log: true,
+    logPeriod: 100,
+    errorThresh: 0.001,
+    timeout: Infinity,
 })
 
-const w = 'เหม็น'
-// const r = brain.likely(toBinary(w), net)
+const w = 'ครับ'
+
+// let r = brain.likely(toBinary(w), net)
+// r = convert(r, w)
+// console.log(r)
+
 const r = net.run(toBinary(w))
 let a = []
 for (const val in r) {
