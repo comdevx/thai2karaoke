@@ -10,8 +10,8 @@ const toBinary = require('./to_binary')
 const convert = require('./convert')
 
 const config = {
-    binaryThresh: 0.5,
-    hiddenLayers: [10], // array of ints for the sizes of the hidden layers in the network
+    binaryThresh: 0.0001,
+    hiddenLayers: [10, 10], // array of ints for the sizes of the hidden layers in the network
     activation: 'sigmoid' // supported activation types: ['sigmoid', 'relu', 'leaky-relu', 'tanh']
 }
 
@@ -21,17 +21,19 @@ net.train(list, {
     // iterations: 20000,
     log: true,
     logPeriod: 100,
-    errorThresh: 0.001,
+    errorThresh: 0.005,
     timeout: Infinity,
 })
 
-const w = 'ครับ'
+const w = ['เลย', 'โหว']
 
-// let r = brain.likely(toBinary(w), net)
-// r = convert(r, w)
-// console.log(r)
+// let r = brain.likely(toBinary(w[0]), net)
+// let r2 = brain.likely(toBinary(w[1]), net)
+// r = convert(r, w[0])
+// r2 = convert(r2, w[1])
+// console.log(r, r2)
 
-const r = net.run(toBinary(w))
+const r = net.run(toBinary(w[0]))
 let a = []
 for (const val in r) {
     a.push([val, r[val]])
@@ -42,5 +44,5 @@ a.sort(function (a, b) {
 })
 console.log(a)
 const i = a.length - 1
-a = convert(a[i][0], w)
+a = convert(a[i][0], w[0])
 console.log(a)

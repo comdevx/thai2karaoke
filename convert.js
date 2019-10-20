@@ -198,6 +198,18 @@ module.exports = (r, w) => {
         s = fw(w[2])
         r = f.first + 'o' + s.spell
     }
+    if (r === 'o4') {
+        f = fw(w[1])
+        s = fw(w[2])
+        th = fw(w[3])
+        r = f.first + s.spell + 'o' + th.spell
+    }
+    if (r === 'o5') {
+        f = fw(w[1])
+        s = fw(w[2])
+        th = fw(w[4])
+        r = f.first + s.spell + 'o' + th.spell
+    }
     if (r === 'oe') {
         f = fw(w[1])
         r = f.first + 'oe'
@@ -217,6 +229,10 @@ module.exports = (r, w) => {
         s = fw(w[2])
         th = fw(w[3])
         r = f.first + s.spell + 'oe' + th.spell
+    }
+    if (r === 'oei') {
+        f = fw(w[1])
+        r = f.first + 'oei'
     }
     if (r === 'ia') {
         f = fw(w[1])
@@ -298,7 +314,7 @@ module.exports = (r, w) => {
     if (r === 'ai1') {
         f = fw(w[1])
         s = fw(w[2])
-        r = f.first + 'ai' + s.spell
+        r = f.first + s.spell + 'ai'
     }
     if (r === 'ao') {
         f = fw(w[1])
